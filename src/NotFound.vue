@@ -1,0 +1,24 @@
+<template>
+    <div class="container">
+        <h1 class="center">D: Ein Fehler ist aufgetreten</h1>
+        <p class="center">Leider konnten wir die von Ihnen angeforderte Seite nicht finden.</p>
+    </div>    
+</template>
+
+<script>
+export default {
+    name: 'PageNotFound'
+}
+</script>
+
+<style scoped>
+
+.container {
+    margin-top: 30vh;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #960B0B;
+}
+</style>

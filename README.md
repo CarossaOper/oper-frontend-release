@@ -15,6 +15,57 @@ npm run serve
 npm run build
 ```
 
+#### Running the production server and backend
+
+Setup the connection properties by modifying the `.env` file in the server directory
+
+```
+PORT=PORT_FOR_PAGE
+
+DB_STRING=CONNECTION_STRING_TO_MONGODB
+```
+
+Starting the server:
+
+```
+# Windows
+node server.js
+
+# Linux
+sudo node server.js
+```
+
+### Backend API-Routes (`server/api/api.js`)
+
+```
+GET /api/blog
+```
+Retrieve all blog entries from the server
+
+```
+POST /api/newsletter
+
+{
+    email: test@test.com
+}
+```
+Add a new email to the newsletter
+
+```DELETE /api/newsletter
+
+{
+    email: test@test.com
+}
+```
+Remove email from newsletter
+
+##### ToDo:
+
+[ ] Backend server and database
+[ ] Dynamically loading blogs (frontend with axios https requests)
+[ ] Newsletter SMTP Mailer
+
+
 ### Lints and fixes files
 ```
 npm run lint
