@@ -1,7 +1,7 @@
 # HCG P-Seminar Oper 2021-23 🎭
 
-https://img.shields.io/badge/Discord-7289DA?style=flat&logo=discord&logoColor=white&link=https://discord.gg/5eX3tJGZ
-https://img.shields.io/badge/license-MIT-blue
+![](https://img.shields.io/badge/Discord-7289DA?style=flat&logo=discord&logoColor=white&link=https://discord.gg/5eX3tJGZ)
+![](https://img.shields.io/badge/license-MIT-blue)
 ---
 ## Project setup
 ```
