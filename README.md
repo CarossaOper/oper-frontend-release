@@ -61,7 +61,7 @@ sudo node server.js
 
 ### ✔️ TODO
 
-- [ ] Backend server and database
+- [x] Backend server and database
 - [ ] Dynamically loading blogs (frontend with axios https requests)
 - [ ] Newsletter SMTP Mailer
 
