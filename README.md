@@ -6,23 +6,27 @@
 ![](https://badgen.net/github/last-commit/CarossaOper/hcgoper)
 ![](https://badgen.net/github/release/CarossaOper/hcgoper)
 ---
-## Project setup
+## Installation
+Clone the repo and download the latest packages
 ```
+git clone https://github.com/CarossaOper/hcgoper
+cd hcgoper
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## 🚀 Launch
+### 📓 Development
+
 ```
 npm run serve
 ```
+> This won't start the backend server
 
-### Compiles and minifies for production
+### 💻 Production
+
 ```
 npm run build
 ```
-
-#### Running the production server and backend
-
 Setup the connection properties by modifying the `.env` file in the server directory
 
 ```
@@ -43,33 +47,23 @@ sudo node server.js
 
 ### Backend API-Routes (`server/api/api.js`)
 
-```
-GET /api/blog
-```
-Retrieve all blog entries from the server
+#### Retrieve all blog entries from the server (as an RSS Feed)
 
-```
-POST /api/newsletter
+```GET /api/blog```
 
-{
-    email: test@test.com
-}
-```
-Add a new email to the newsletter
+#### Add a new email to the newsletter
 
-```DELETE /api/newsletter
+```POST /api/newsletter```
 
-{
-    email: test@test.com
-}
-```
-Remove email from newsletter
+#### Remove email from newsletter
 
-##### ToDo:
+```DELETE /api/newsletter```
 
-[ ] Backend server and database
-[ ] Dynamically loading blogs (frontend with axios https requests)
-[ ] Newsletter SMTP Mailer
+### ✔️ TODO
+
+- [ ] Backend server and database
+- [ ] Dynamically loading blogs (frontend with axios https requests)
+- [ ] Newsletter SMTP Mailer
 
 
 ### Lints and fixes files
