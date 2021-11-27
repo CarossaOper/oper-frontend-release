@@ -1,6 +1,5 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const bodyparser = require("body-parser")
 
 const PostSchema = require("../schemas/post.js")
 const Post = mongoose.model("Post", PostSchema)
@@ -15,6 +14,27 @@ router.get("/blog", (req, res) => {
             console.log(`Error querying server: ${error}`)
         } else {
             return res.json({blog: posts});
+        }
+    })
+})
+
+router.get("/post/:id", (req, res) => {
+    let id = req.params.id
+    Post.find({_id: id}, (error, post) => {
+        if (error) {
+            res.json({error: error})
+        } else {
+            res.json({Post: post})
+        }
+    })
+})
+
+router.get("/latest", (req, res) => {
+    Post.findOne().sort({ field: 'asc', _id: -1 }).limit(1).exec((error, post) => {
+        if (error) {
+            res.json({error: error})
+        } else {
+            res.json({Post: post})
         }
     })
 })
