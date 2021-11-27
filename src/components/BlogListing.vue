@@ -3,7 +3,7 @@
         <p>{{date}}</p>
         <h3>{{title}}</h3>
         <p>{{short_content}}</p>
-        <router-link :to="'/post/' + id" exact>Weiter &#8594;</router-link>
+        <router-link :to="'/blog/' + id" exact>Weiter &#8594;</router-link>
     </div>
 </template>
 

@@ -51,6 +51,9 @@ sudo node server.js
 
 ```GET /api/blog```
 
+#### Retrieve a certain blog post
+```GET /api/post/:postid```
+
 #### Add a new email to the newsletter
 
 ```POST /api/newsletter```

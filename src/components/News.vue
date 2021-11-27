@@ -1,10 +1,22 @@
 <template>
     <BlogPost :Post="latest_post"/>
+    <router-link to="/blog" exact>Mehr &#8594;</router-link>
 </template>
 
 <script>
 
 import BlogPost from './BlogPost.vue'
+const axios = require("axios").default
+
+async function getRecentPost(endpoint) {
+    try {
+        const response = await axios.get(endpoint);
+        console.log(response);
+        return response.data.Post
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 export default {
     name: 'News',
@@ -13,29 +25,11 @@ export default {
     },
     data() {
         return {
-            latest_post: {
-                id: 0,
-                title: '',
-                author: '',
-                date: '',
-                content: '',
-                meta: {
-                    views: 0
-                }
-            }
+            latest_post: {}
         }
     },
-    created() {
-        this.latest_post = {
-            id: 1,
-            title: 'Lorem ipsum dior',
-            author: 'Louis Karan',
-            date: '20/11/2021',
-            content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-            meta: {
-                views: 10
-            }
-        }
+    async created() {
+        this.latest_post = await getRecentPost("/api/latest")
     }
 }
 </script>

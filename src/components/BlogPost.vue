@@ -6,8 +6,7 @@
         </div> 
         <h2 class="highlight-bold">{{Post.title}}</h2> 
         <p>{{Post.content}}</p>
-        <p class="highlight-bold">{{Post.meta.views}} Aufrufe</p>
-        <router-link :to="'/blog/'+ Post.id" exact>Mehr &#8594;</router-link>
+        <p class="highlight-bold">{{Post.meta.views}} Aufrufe</p> 
     </div>
 </template>
 
@@ -17,7 +16,7 @@ export default {
     name: 'BlogPost',
     props: {
         Post: {
-            id: Number,
+            _id: Number,
             title: String,
             author: String,
             date: String,

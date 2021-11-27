@@ -99,8 +99,8 @@
 
 <script>
 
-import Nav from "./components/Nav.vue"
-import News from "./components/News.vue"
+import Nav from "../components/Nav.vue"
+import News from "../components/News.vue"
 
 export default {
     name: 'Home',
