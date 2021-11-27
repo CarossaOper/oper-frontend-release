@@ -2,6 +2,9 @@
 
 ![](https://img.shields.io/badge/Discord-7289DA?style=flat&logo=discord&logoColor=white&link=https://discord.gg/5eX3tJGZ)
 ![](https://img.shields.io/badge/license-MIT-blue)
+![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
+![](https://badgen.net/github/last-commit/CarossaOper/hcgoper)
+![](https://badgen.net/github/release/CarossaOper/hcgoper)
 ---
 ## Project setup
 ```
