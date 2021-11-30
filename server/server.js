@@ -1,7 +1,6 @@
 const express = require("express")
 const serveStatic = require("serve-static")
 const path = require("path")
-const dotenv = require("dotenv").config()
 const mongoose = require("mongoose")
 const bodyparser = require("body-parser")
 const router = require("./api/api.js")
