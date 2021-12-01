@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 import Home from "@/views/Home.vue"
 import Blog from "@/views/Blog.vue"
-import Post from "./components/BlogPost.vue"
+import Post from "@/views/Post.vue"
 import PageNotFound from "@/views/NotFound.vue"
 
 const routes = [

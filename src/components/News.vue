@@ -8,28 +8,40 @@
 import BlogPost from './BlogPost.vue'
 const axios = require("axios").default
 
-async function getRecentPost(endpoint) {
-    try {
-        const response = await axios.get(endpoint);
-        console.log(response);
-        return response.data.Post
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 export default {
     name: 'News',
     components: {
         BlogPost
     },
+
     data() {
         return {
-            latest_post: {}
+            latest_post: {},
+            loading: false
         }
     },
+
     async created() {
-        this.latest_post = await getRecentPost("/api/latest")
+        this.latest_post = await this.getRecentPost()
+    },
+
+    watch: {
+        '$route': 'getRecentPost'
+    },
+
+    methods: {
+        async getRecentPost() {
+            let endpoint = "/api/latest"
+            this.loading = true
+            try {
+                const response = await axios.get(endpoint);
+                console.log(response);
+                return response.data.Post
+            } catch (error) {
+                console.error(error);
+            }
+            this.loading = false
+        }
     }
 }
 </script>

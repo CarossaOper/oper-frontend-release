@@ -11,13 +11,14 @@ Clone the repo and download the latest packages
 ```
 git clone https://github.com/CarossaOper/hcgoper
 cd hcgoper
-npm install
 ```
 
-## 🚀 Launch
+## 🚀 Without Docker
 ### 📓 Development
 
 ```
+npm install
+
 npm run serve
 ```
 > This won't start the backend server
@@ -44,6 +45,25 @@ node server.js
 # Linux
 sudo node server.js
 ```
+## 🐳 Docker
+
+Configure the `Dockerfile` to your suit needs
+```
+ENV DB_STRING=<YOUR DB CONNECTION>
+ENV PORT=<YOUR PORT>
+```
+
+Build the docker image (currently `dev`)
+
+```
+docker build -t hcgoper/oper:dev .
+```
+
+Run docker container and expose ports (in this case 80)
+
+```
+docker run -d -p 80:80 hcgoper/oper:dev
+```
 
 ### Backend API-Routes (`server/api/api.js`)
 
@@ -64,9 +84,14 @@ sudo node server.js
 
 ### ✔️ TODO
 
+- [x] Base structure and page system
 - [x] Backend server and database
-- [ ] Dynamically loading blogs (frontend with axios https requests)
+- [x] Dynamically loading blogs (frontend with axios https requests)
+- [ ] Newsletter insert/delete new email
 - [ ] Newsletter SMTP Mailer
+- [ ] Scrolling to element support on main page
+- [ ] Back to top button on long pages (bottom right corner)
+- [ ] *OPTIONAL* Blog management system (admin page or client control panel)
 
 
 ### Lints and fixes files
