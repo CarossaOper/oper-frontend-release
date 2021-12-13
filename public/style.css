@@ -28,12 +28,6 @@
     border-color: #960B0B !important;
 }
 
-.svg {
-    position: absolute;
-    top: 100vh;
-    padding: 0;
-}
-
 .row .card {
     font-family: 'Oswald', sans-serif;
     height: 350px;

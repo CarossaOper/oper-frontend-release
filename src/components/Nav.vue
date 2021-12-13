@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg">
+    <nav :class="{trans: transparent}" class="navbar sticky-top navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand hcgred bg-light ms-4" href="#">
                 Die Carossa Oper
@@ -41,15 +41,41 @@
 
 <script>
 export default {
-    name: "Nav"
+    name: "Nav",
+    data() {
+        return {
+            transparent: false,
+            lastscrollpos: 0,
+        }
+    },
+    created() {
+        window.addEventListener("scroll", this.scroll)
+    },
+    unmounted() {
+        window.removeEventListener("scroll", this.scroll)
+    },
+    methods:  {
+        scroll() {
+            let pos = window.scrollY;
+            if (pos - this.lastscrollpos > 0) {
+                console.log("Transparent");
+                this.transparent = true;
+            } else {
+                console.log("Not")
+                this.transparent = false;
+            }
+            this.lastscrollpos = pos;
+        }
+    }
 }
 </script>
 
 <style scoped>
 
 .navbar {
+    transition: opacity 1s ease-in-out;
     font-family: 'Oswald', sans-serif;
-    background-color: black;
+    background: rgba(0, 0, 0, 1.0);
 }
 
 .navbar .container-fluid {
@@ -82,6 +108,10 @@ nav .navbar-nav li a:after {
 
 nav .navbar-nav li a:hover:after {
     width: 100%;
+}
+
+.trans {
+    opacity: 0.0;
 }
 
 </style>
