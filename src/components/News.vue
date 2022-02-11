@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 p {
   font-family: 'Shippori Antique B1', sans-serif;

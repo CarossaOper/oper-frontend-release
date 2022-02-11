@@ -1,22 +1,28 @@
 <template>
-    <h1 class="mb-5 newsletter-heading">Newsletter</h1>
-    <div class="input-group mb-3">
-        <input type="text" id="email" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="newsletter-enter" v-model="mail">
-        <button class="btn btn-outline-light" type="button" id="newsletter-enter" v-on:click="subscribe">
-            <span v-if="sub">Bestellen</span>
-            <span v-else>Abbestellen</span>
-        </button>
+    <div class="mt-3 newsletter-container">
+        <div class="pt-5 pb-5 container">
+            <h1 class="mb-3 newsletter-heading">Newsletter</h1>
+            <div class="input-group mb-3">
+                <input type="text" id="email" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="newsletter-enter" v-model="mail">
+                <button class="btn btn-outline-light enter-button-outline" type="button" id="newsletter-enter" v-on:click="subscribe">
+                    <span v-if="sub">Bestellen</span>
+                    <span v-else>Abbestellen</span>
+                </button>
+            </div>
+            <div class="toggle-button-container">
+                <p class="info-text">
+                    <span v-if="type === 0">Erhalten Sie wichtige Informationen direkt in Ihrem Postfach</span>
+                    <span v-else-if="type === 1">Wir freuen uns, Sie dabei zu haben! Bitte bestätigen Sie Ihre E-Mail.</span>
+                    <span v-else-if="type === 2">Wir haben Sie aus unserem Newsletter entfernt.</span>
+                    <span v-else>Ein Fehler ist aufgetreten! Bitte überprüfen Sie Ihre Eingabe oder versuchen Sie es später erneut.</span>
+                </p>
+                <a class="toggle-button" href="javascript:;" v-on:click="sub=!sub">
+                    <span v-if="sub">Abbestellen &#8594;</span>
+                    <span v-else>Bestellen &#8594;</span>
+                </a>
+            </div>
+        </div>    
     </div>
-    <p class="info-text">
-        <span v-if="type === 0">Erhalten Sie wichtige Informationen direkt in Ihrem Postfach</span>
-        <span v-else-if="type === 1">Wir freuen uns, Sie dabei zu haben! Bitte bestätigen Sie Ihre E-Mail.</span>
-        <span v-else-if="type === 2">Wir haben Sie aus unserem Newsletter entfernt.</span>
-        <span v-else>Ein Fehler ist aufgetreten! Bitte überprüfen Sie Ihre Eingabe oder versuchen Sie es später erneut.</span>
-    </p>
-    <a href="javascript:;" v-on:click="sub=!sub">
-        <span v-if="sub">Abbestellen &#8594;</span>
-        <span v-else>Bestellen &#8594;</span>
-    </a>
 </template>
 
 <script>
@@ -63,3 +69,34 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .newsletter-container {
+        background-color: #5482B6;
+        font-family: "Oswald",sans-serif;
+    }
+    .newsletter-heading {
+        color: #ffffff;
+    }
+    .form-control {
+        border-radius: 0 !important;
+        border-color: #ffffff;
+        height: 50px;
+    }
+    .enter-button-outline {
+        border-width: 3px;
+        width: 120px;
+    }
+    .info-text {
+        color: #ffffff;
+        display: inline-block;
+    }
+    .toggle-button {
+        color: #ffffff;
+        float:right;
+    }
+    .toggle-button-container {
+        width: 100%;
+    }
+
+</style>

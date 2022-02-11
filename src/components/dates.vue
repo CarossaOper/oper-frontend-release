@@ -1,5 +1,5 @@
 <template>
-    <div class="container termin">
+    <div class="termin">
         <div class="termin-content">
             <div class="date">
                 <h4 class="center">SO</h4>
@@ -23,7 +23,6 @@
                 
             </div>
         </div>
-        <p>padding</p>
     </div>
 </template>
 
