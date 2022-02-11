@@ -17,15 +17,16 @@
         <Dates date="Date.now()" time="19:00" location="Theaterzelt Landshut" sold="false"/>
     </div>
     <Newsletter/>
-    
+
     <!--<Footer/>-->
+    <Footer/>
 </template>
 
 <script>
 
 import Nav from "../components/Nav.vue"
 //import News from "../components/News.vue"
-//import Footer from "../components/Footer.vue"
+import Footer from "../components/Footer.vue"
 import Dates from "../components/dates.vue"
 import toTop from "../components/toTop.vue"
 import Newsletter from "../components/Newsletter.vue"
@@ -35,7 +36,7 @@ export default {
     components: {
         Nav,
         //News,
-        //Footer,
+        Footer,
         Dates,
         toTop,
         Newsletter
