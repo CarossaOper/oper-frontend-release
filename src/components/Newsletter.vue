@@ -93,10 +93,17 @@ export default {
     }
     .toggle-button {
         color: #ffffff;
-        float:right;
+        float: right;
     }
     .toggle-button-container {
         width: 100%;
     }
-
+@media only screen and (max-width: 767px) {
+   .info-text {
+       display: block;
+   }
+   .toggle-button {
+       float: left;
+   }
+}
 </style>
