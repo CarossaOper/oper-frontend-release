@@ -1,5 +1,5 @@
 <template>
-    <div :class="{trans: hidden}" class="toTop">
+    <div :class="{trans: hidden}" @click="scrollToTop()" class="toTop">
         <i class="fa fa-chevron-up center" aria-hidden="true"></i>
     </div>
 </template>
@@ -25,6 +25,9 @@ export default {
             } else {
                 this.hidden = true;
             }
+        },
+        scrollToTop() {
+            window.scrollTo(0, 0);
         }
     }
 }
@@ -37,10 +40,10 @@ export default {
     height: 40px;
     right: 1vw;
     bottom: 2vh;
-    border: 2px solid black;
+    border: 2px solid #000000;
     cursor: pointer;
     z-index: 99;
-    color: black;
+    color: #000000;
 
     display: flex;
     align-items: center;
@@ -50,8 +53,8 @@ export default {
 }
 
 .toTop:hover{
-    background-color: black;
-    color: #ffffff;
+    background-color:#000000;
+    color: #ffffff
 }
 
 .trans {
