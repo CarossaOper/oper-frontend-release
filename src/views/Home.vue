@@ -12,7 +12,8 @@
         </a>
     </div>
 
-    <div class="container-flex termine" id="termine">
+    <div class="container termine" id="termine">
+        <div class="divider"><h1>Termine</h1></div>
         <Dates date="Date.now()" time="19:00" location="Theaterzelt Landshut" sold="false"/>
     </div>
     
@@ -47,6 +48,13 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color:#5482B6;
+}
+
 .jumbotron .container-fluid {
     position: absolute;
     background-image: url("../assets/hero-bg.jpg");
