@@ -146,7 +146,7 @@ export default {
   height: 100%;
   background: #51e083;
   z-index: -1;
-  transition: all 0.35s;
+  transition: all 0.40s;
 }
 
 .btn:hover:after {
