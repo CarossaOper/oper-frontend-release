@@ -6,19 +6,19 @@
         <div class="container-fluid"></div>
     </div>
 
-    <div class="termin-btn center">
-        <a class="btn" @click="scrollToElement('termine')">
-            <span>Mehr</span>
-        </a>
+    <div class="input-group termin-btn center">
+        <button class="btn btn-outline-light enter-button-outline" type="button" id="newsletter-enter" v-on:click="scrollToElement('termine')">
+          <span class="btn-text">Mehr</span>
+        </button>
     </div>
 
     <div class="container termine" id="termine">
         <div class="divider"><h1>Termine</h1></div>
         <Dates date="Date.now()" time="19:00" location="Theaterzelt Landshut" sold="false"/>
     </div>
+
     <Newsletter/>
 
-    <!--<Footer/>-->
     <Footer/>
 </template>
 
@@ -80,7 +80,7 @@ h1 {
     border-radius: 0% !important;
     width: 175px;
     height: 50px;
-    border-width: 5px;
+    border-width: 3px;
     border-color: white;
     color: white;
 
@@ -93,7 +93,25 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #5482B6;
+  color: black !important;
+  background-color: transparent !important;
+  text-decoration: none;
+}
+
+.btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  z-index: -1;
+  transition: all 0.40s;
+}
+
+.btn:hover:after {
+  width: 100%;
 }
 
 .termine {
@@ -102,7 +120,7 @@ h1 {
 
 @media only screen and (max-width: 691px) {
     .btn {
-        background-color: #5482B6;
+        background: rgba(0,0,0,.7);
     }
 }
 </style>
