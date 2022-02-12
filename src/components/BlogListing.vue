@@ -1,10 +1,14 @@
 <template>
-    <div class="container">
-        <p>{{date}}</p>
-        <h3>{{title}}</h3>
-        <p>{{short_content}}</p>
-        <router-link :to="'/blog/' + id" exact>Weiter &#8594;</router-link>
+<div class="post-wrapper">
+    <div class="post-inner">
+        <h1>Ticketvorverkauf gestartet</h1>
+        <h6>von Jakob Reiser</h6>
+        <article>
+            Die letzen Tage waren stressig doch das Meiste ist geschafft und wir haben eine erfreuliche Nachricht für Sie. Nach viel Vorbereitung ist es endlich soweit: Am 10.01.2023 startet der Karten-Verkauf. Zu erwerben sind die Karten entweder in der Filliale vor Ort oder über unseren Onlineshop. Dazu müssen Sie nur auf unserer Website die Sektion...
+        </article>
+        <router-link :to="'/blog/' + id" exact>mehr lesen</router-link>
     </div>
+</div>
 </template>
 
 <script>
@@ -20,16 +24,36 @@ export default {
 </script>
 
 <style scoped>
-
-h3 {
+.post-wrapper {
+    background-color: #F0F0F0;
     font-family: 'Oswald', sans-serif;
-    color: #960B0B;
+    width: 100%;
+}
+
+.post-inner {
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 200;
+    color: #5482B6;
+}
+
+article {
+    font-weight: 200;
+    font-size: 20px;
 }
 
 a {
     text-decoration: none;
-    color: black;
-    font-family: 'Shippori Antique B1', sans-serif;
+    color: #5482B6;
+    font-weight: 700;
 }
-
 </style>

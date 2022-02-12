@@ -12,9 +12,19 @@
         </button>
     </div>
 
-    <div class="container termine" id="termine">
+    <div class="container termine section" id="termine">
         <div class="divider"><h1>Termine</h1></div>
         <Dates date="Date.now()" time="19:00" location="Theaterzelt Landshut" sold="false"/>
+    </div>
+
+    <div class="container news section" id="news">
+        <div class="divider"><h1>News</h1></div>
+        <News/>
+    </div>
+
+    <div class="container sponsors section">
+        <div class="divider"><h1>Sponsoren</h1></div>
+        <Sponsors/>
     </div>
 
     <Newsletter/>
@@ -25,21 +35,23 @@
 <script>
 
 import Nav from "../components/Nav.vue"
-//import News from "../components/News.vue"
+import News from "../components/News.vue"
 import Footer from "../components/Footer.vue"
 import Dates from "../components/dates.vue"
 import toTop from "../components/toTop.vue"
 import Newsletter from "../components/Newsletter.vue"
+import Sponsors from "../components/Sponsors.vue"
 
 export default {
     name: 'Home',
     components: {
         Nav,
-        //News,
+        News,
         Footer,
         Dates,
         toTop,
-        Newsletter
+        Newsletter,
+        Sponsors
     },
     methods: {
         scrollToElement(element) {
@@ -55,6 +67,10 @@ h1 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     color:#5482B6;
+}
+
+.section {
+    margin-top: 10vh;
 }
 
 .jumbotron .container-fluid {

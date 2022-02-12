@@ -1,17 +1,16 @@
 <template>
-    <BlogPost :Post="latest_post"/>
-    <router-link to="/blog" exact>Mehr &#8594;</router-link>
+<BlogListing/>
 </template>
 
 <script>
 
-import BlogPost from './BlogPost.vue'
+import BlogListing from './BlogListing.vue'
 const axios = require("axios").default
 
 export default {
     name: 'News',
     components: {
-        BlogPost
+        BlogListing
     },
 
     data() {
@@ -48,8 +47,4 @@ export default {
 
 <style scoped>
 
-p {
-  font-family: 'Shippori Antique B1', sans-serif;
-  font-size: 1em;
-}
 </style>

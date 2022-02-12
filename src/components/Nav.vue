@@ -1,43 +1,46 @@
 <template>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex justify-content-end">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button id="toggler" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars fa-2x" aria-hidden="true" style="color: white;"></span>
             </button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <button class="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-solid fa-xmark fa-2x" aria-hidden="true" style="color: white;"></span>
-                </button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            Über uns
-                        </a>
-                    </li>
+            
+                <div class="offcanvas-header">
+                    <button class="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa fa-solid fa-xmark fa-2x" aria-hidden="true" style="color: white;"></span>
+                    </button>
+                </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#termine">
-                            Termine
-                        </a>
-                    </li>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                Über uns
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            News
-                        </a>
-                    </li>
-                        
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            Partner
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:;" v-on:click="scrollToElement('termine')">
+                                Termine
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                News
+                            </a>
+                        </li>
+                            
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                Partner
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,6 +49,12 @@
 <script>
 export default {
     name: "Nav",
+    methods: {
+        scrollToElement(element) {
+            document.getElementById(element).scrollIntoView({behavior: "smooth"});
+            //document.getElementById("toggler").click();
+        }
+    }
 }
 </script>
 
