@@ -144,7 +144,7 @@ export default {
   left: 0;
   width: 0;
   height: 100%;
-  background: #51e083;
+  background: #000000;
   z-index: -1;
   transition: all 0.40s;
 }
