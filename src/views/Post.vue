@@ -1,21 +1,21 @@
 <template>
+    <div>
+        <div v-if="loading" class="loading-status d-flex justify-content-center">
+            <div class="spinner-border my-5" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
 
-<Nav />
+        <Nav/>
 
-<div v-if="loading" class="loading-status d-flex justify-content-center">
-    <div class="spinner-border my-5" role="status">
-        <span class="sr-only">Loading...</span>
+        <div class="container my-5">
+            <BlogPost :Post="post"/>
+
+            <router-link to="/blog" exact>&#8592; Zurück</router-link> 
+        </div>
+
+        <Footer/>
     </div>
-</div>
-
-<div class="container my-5">
-    <BlogPost :Post="post"/>
-
-    <router-link to="/blog" exact>&#8592; Zurück</router-link> 
-</div>
-
-<Footer/>
-
 </template>
 
 <script>
@@ -50,7 +50,7 @@ export default {
 
     methods: {
         async getPost() {
-            let endpoint = `/api/post/${this.$route.params.id}`
+            let endpoint = `http://localhost:8081/api/post/${this.$route.params.id}`
             this.loading = true
             try {
                 let response = await axios.get(endpoint);
@@ -66,6 +66,13 @@ export default {
 </script>
 
 <style scoped>
+
+Nav {
+    background-image: url("../assets/hero-bg.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .spinner-border {
     width: 5rem;

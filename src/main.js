@@ -7,13 +7,10 @@ import Post from "@/views/Post.vue"
 import PageNotFound from "@/views/NotFound.vue"
 
 const routes = [
-    { path: '/', component: Home, name: 'Home' },
-    //'/about': About,
-    //'/partner': Partner,
-    { path: '/blog', component: Blog , name: 'blog' },
-    { path: '/blog/:id', component: Post, name: 'Post' },
-    { path: '/:catchAll(.*)*', component: PageNotFound , name: 'PageNotFound' },
-    //{ path: '/posts/:id',   component: }
+    { path: '/',                component: Home },
+    { path: '/blog',            component: Blog },
+    { path: '/blog/:id',        component: Post },
+    { path: '/:catchAll(.*)*',  component: PageNotFound },
 ]
 
 const router = createRouter ({

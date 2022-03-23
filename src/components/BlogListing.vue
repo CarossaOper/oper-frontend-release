@@ -1,10 +1,9 @@
 <template>
 <div class="post-wrapper">
     <div class="post-inner">
-        <h1>Ticketvorverkauf gestartet</h1>
-        <h6>von Jakob Reiser</h6>
-        <article>
-            Die letzen Tage waren stressig doch das Meiste ist geschafft und wir haben eine erfreuliche Nachricht für Sie. Nach viel Vorbereitung ist es endlich soweit: Am 10.01.2023 startet der Karten-Verkauf. Zu erwerben sind die Karten entweder in der Filliale vor Ort oder über unseren Onlineshop. Dazu müssen Sie nur auf unserer Website die Sektion...
+        <h1>{{title}}</h1>
+        <h6>von {{author}}</h6>
+        <article v-html="short_content">
         </article>
         <router-link :to="'/blog/' + id" exact>mehr lesen</router-link>
     </div>
@@ -17,7 +16,7 @@ export default {
     props: {
         id: Number,
         title: String,
-        date: String,
+        author: String,
         short_content: String,
     }
 }

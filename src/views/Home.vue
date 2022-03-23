@@ -22,7 +22,7 @@
         <News/>
     </div>
 
-    <div class="container sponsors section">
+    <div class="container sponsors section" id="partner">
         <div class="divider"><h1>Sponsoren</h1></div>
         <Sponsors/>
     </div>

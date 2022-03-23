@@ -102,6 +102,10 @@ export default {
   color: #ffffff;
 }
 
+#newsletter-enter {
+  border-radius: 0 !important;
+}
+
 .form-control {
   border-radius: 0 !important;
   border-color: #ffffff;

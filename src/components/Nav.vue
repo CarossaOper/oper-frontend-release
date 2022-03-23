@@ -17,27 +17,27 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <router-link class="nav-link" to="/">
                                 Über uns
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:;" v-on:click="scrollToElement('termine')">
+                            <router-link class="nav-link" to="/" v-on:click="scrollToElement('termine')">
                                 Termine
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <router-link to="/blog" class="nav-link" exact>
                                 News
-                            </a>
+                            </router-link>
                         </li>
                             
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <router-link class="nav-link" to="/" v-on:click="scrollToElement('partner')">
                                 Partner
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
