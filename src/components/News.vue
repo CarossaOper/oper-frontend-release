@@ -30,7 +30,7 @@ export default {
 
     methods: {
         async getRecentPost() {
-            let endpoint = "http://localhost:8081/api/latest"
+            let endpoint = "http://carossa-oper.de:8081/api/latest"
             this.loading = true
             try {
                 const response = await axios.get(endpoint);

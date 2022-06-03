@@ -50,7 +50,7 @@ export default {
 
     methods: {
         async getPost() {
-            let endpoint = `http://localhost:8081/api/post/${this.$route.params.id}`
+            let endpoint = `http://carossa-oper.de:8081/api/post/${this.$route.params.id}`
             this.loading = true
             try {
                 let response = await axios.get(endpoint);

@@ -17,7 +17,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/">
+                            <router-link class="nav-link" to="/ueber" exact>
                                 Über uns
                             </router-link>
                         </li>

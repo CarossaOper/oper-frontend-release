@@ -48,7 +48,7 @@ export default {
         }
     },
     async created() {
-        this.posts = await getPosts("http://localhost:8081/api/blog")
+        this.posts = await getPosts("http://carossa-oper.de:8081/api/blog")
         console.log(this.posts)
     },
     methods: {

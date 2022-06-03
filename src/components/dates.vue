@@ -14,7 +14,7 @@
                 <div class="main">
                     <div class="text-wrapper">
                         <h2>Die Göttin wird modern</h2>
-                        <p class="description">Von Burkhard Lutz & Bernhard Werthmann</p>
+                        <p class="description">Von Burkard Lutz</p>
                     </div>
                     <a class="tickets btn">
                         <span><i class="fa-solid fa-ticket"></i> Karten kaufen</span>

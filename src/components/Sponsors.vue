@@ -1,15 +1,10 @@
 <template>
 <div class="sponsor-wrapper">
     <div class="sponsor-row">
-        <img src="../assets/microsoft.png" alt="">
-        <img src="../assets/github.png" alt="">
-        <img src="../assets/google.png" alt="">
+        <img src="../assets/sponsors/lionsclub.jpg" alt="">
+        <img src="../assets/sponsors/kueffner_logo.jpg" alt="">
     </div>
-    <div class="sponsor-row">
-        <img src="" alt="">
-        <img src="../assets/bmw.png" alt="">
-        <img src="../assets/hcg.png" alt="">
-    </div>
+    <!--<div class="sponsor-row"></div>-->
 </div>
 </template>
 
@@ -33,7 +28,8 @@ export default {
 }
 
 img {
-    max-height: 100px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media only screen and (max-width: 691px) {
