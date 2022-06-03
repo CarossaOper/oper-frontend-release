@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap&family=Shippori+Antique+B1&display=swap');
 
+:root {
+    --light-text-color: white;
+    --dark-text-color: black;
+    --accent-color: #5482B6;
+    --title-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
 .center {
     display: flex;
     justify-content: center;

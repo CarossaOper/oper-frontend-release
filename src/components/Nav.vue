@@ -15,28 +15,28 @@
                 </div>
 
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
-                        <li class="nav-item">
+                    <ul class="navbar-nav ms-auto  mb-4 mb-lg-0">
+                        <li class="nav-item px-2">
                             <router-link class="nav-link" to="/">
                                 Über uns
                             </router-link>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <router-link class="nav-link" to="/" v-on:click="scrollToElement('termine')">
                                 Termine
                             </router-link>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <router-link to="/blog" class="nav-link" exact>
                                 News
                             </router-link>
                         </li>
                             
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <router-link class="nav-link" to="/" v-on:click="scrollToElement('partner')">
-                                Partner
+                                Sponsoren
                             </router-link>
                         </li>
                     </ul>
@@ -61,42 +61,22 @@ export default {
 <style scoped>
 
 .navbar {
-    text-transform: uppercase;
-    font-weight: 100;
-    font-family: 'Oswald', sans-serif;
-}
-
-.navbar .container-fluid {
-    margin-top: 1vh;
-}
-
-nav div a.hcgred {
-    color: #5482B6 !important;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: bold;
-    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--title-font-family);
 }
 
 nav .navbar-nav li a {
     font-size: 1.5em;
     position: relative;
     color: #FFFFFF !important;
+    transition: text-shadow 0.3s ease;
 }
 
-nav .navbar-nav li a:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    border-bottom: 2px solid #5482B6;
-    transition: 0.4s;
+nav .navbar-nav li a:hover {
+    text-shadow: 0px 0px 10px white;
+    transition: text-shadow 0.3s ease;
 }
 
-nav .navbar-nav li a:hover:after {
-    width: 100%;
-}
 
 /*-------Mobile navbar--------*/
 @media only screen and (max-width: 991.5px) {

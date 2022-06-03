@@ -1,11 +1,27 @@
 <template>
-    <BlogListing :id="latest_post._id" :title="latest_post.title" :author="latest_post.author" :short_content="shortenString(this.latest_post.content, 400)"/>
+    <BlogListing :slug="latest_post.slug" :title="latest_post.title" :authors="latest_post.authors" :short_content="latest_post.shortContent"/>
 </template>
 
 <script>
 
 import BlogListing from './BlogListing.vue'
-const axios = require("axios").default
+import GhostContentAPI from '@tryghost/content-api'
+
+class Post {
+    constructor(slug, title, shortContent, authors, lastEditTime) {
+        this.slug = slug;
+        this.title = title;
+        this.shortContent = shortContent;
+        this.authors = authors;
+        this.lastEditTime = lastEditTime;
+    }
+}
+
+const api = new GhostContentAPI({
+  url: 'http://localhost:2368',
+  key: '6ee0111f27186d49b8f7484183',
+  version: "v5.0"
+});
 
 export default {
     name: 'News',
@@ -21,7 +37,14 @@ export default {
     },
 
     async created() {
-        this.latest_post = await this.getRecentPost()
+        let posts = await this.getRecentPost().then(result => result)
+        let post = posts[0]
+        let authors = post.authors
+        let authorsAsString = ""
+        authors.forEach(author => {
+            authorsAsString += "" + author.name
+        });
+        this.latest_post = new Post(post.slug, post.title, this.shortenString(post.html, 400), authorsAsString, post.created_at);
     },
 
     watch: {
@@ -30,17 +53,11 @@ export default {
 
     methods: {
         async getRecentPost() {
-            let endpoint = "http://localhost:8081/api/latest"
-            this.loading = true
-            try {
-                const response = await axios.get(endpoint);
-                console.log(response);
-                return response.data.Post
-            } catch (error) {
-                console.error(error);
-            }
-            this.loading = false
-        },
+            return api.posts.browse({limit: 1, include: 'tags,authors'})
+            .catch((err) => {
+                console.error(err);
+            });
+        }, 
         shortenString(str, strlen) {
             let truncated = str.slice(0, strlen)
             return `${truncated}...`

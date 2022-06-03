@@ -63,7 +63,7 @@ export default {
 <style scoped>
 
 Nav {
-    background-image: url("../assets/hero-bg.jpg");
+    background-image: url("../assets/hero-bg.jpeg");
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
