@@ -5,7 +5,7 @@
             <div class="footer-content pt-3 row">
                 <a class="col-5 center" href="#">Datenschutz</a>
                 <a class="col-1 center social-icon" href="mailto:hcgoper@carossa-gymnasium.de"><i class="fa fa-envelope"></i></a>
-                <a class="col-1 center social-icon" href="#"><i class="fa-brands fa-instagram"></i></a> 
+                <a class="col-1 center social-icon" href="https://www.instagram.com/carossaoper/"><i class="fa-brands fa-instagram"></i></a> 
                 <a class="col-5 center" href="#">Impressum</a>        
             </div>
             <div class="center">
