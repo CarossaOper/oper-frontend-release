@@ -2,10 +2,9 @@
 <div class="post-wrapper">
     <div class="post-inner">
         <h1>{{title}}</h1>
-        <h6>von {{author}}</h6>
-        <article v-html="short_content">
-        </article>
-        <router-link :to="'/blog/' + id" exact>mehr lesen</router-link>
+        <h6>von {{authors}}</h6> 
+        <article v-html="short_content"></article>
+        <a :href="'http://localhost:2368/' + slug">mehr lesen...</a>
     </div>
 </div>
 </template>
@@ -14,9 +13,10 @@
 export default {
     name: 'BlogListing',
     props: {
-        id: Number,
+        id: String,
+        slug: String,
         title: String,
-        author: String,
+        authors: String,
         short_content: String,
     }
 }

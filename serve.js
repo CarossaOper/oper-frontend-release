@@ -1,6 +1,7 @@
 const express = require("express")
 const path = require("path")
 const serveStatic = require("serve-static")
+const GhostContentAPI = require('@tryghost/content-api');
 
 const app = express()
 
