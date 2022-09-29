@@ -4,6 +4,7 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid"></div>
+        <h1 class="title">Die Göttin wird modern</h1>
     </div>
 
     <div class="input-group termin-btn center">
@@ -59,14 +60,15 @@ export default {
         }
     }
 }
+history.pushState("", document.title, window.location.pathname + window.location.search);
 </script>
 
 <style scoped>
 h1 {
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+
+    font-family: var(--title-font-family);
     font-weight: 700;
-    color:#5482B6;
+    color: var(--accent-color)
 }
 
 .section {
@@ -75,18 +77,32 @@ h1 {
 
 .jumbotron .container-fluid {
     position: absolute;
-    background-image: url("../assets/hero-bg.jpg");
+    background-image: url("../assets/hero-bg.jpeg");
     height: 100vh;
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
     top: 0;
+    filter: contrast(80%*100vh);
+}
+
+.title {
+    position: absolute;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
+    text-align: center;
+    margin-top: 18vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 9vw;
+    text-shadow: 0px 0px 30px rgb(84, 130, 182);
 }
 
 .termin-btn {
     position: absolute;
-    top: 90vh;
+    top: 85vh;
     left: 0;
     right: 0;
     z-index: 1;
@@ -100,7 +116,7 @@ h1 {
     border-color: white;
     color: white;
 
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
 
     display: flex;
@@ -135,8 +151,12 @@ h1 {
 }
 
 @media only screen and (max-width: 691px) {
-    .btn {
-        background: rgba(0,0,0,.7);
+    .enter-button-outline {
+        box-shadow: 1px -1px 93px 57px rgba(0,0,0,0.90);
+        -webkit-box-shadow: 1px -1px 93px 57px rgba(0,0,0,0.90);
+        -moz-box-shadow: 1px -1px 93px 57px rgba(0,0,0,0.90);
+        background: rgba(0,0,0,0.90);
     }
 }
+
 </style>
