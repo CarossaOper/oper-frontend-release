@@ -9,12 +9,12 @@ import About from "@/views/About.vue"
 const routes = [
     { path: '/',                component: Home },
     { path: '/ueber',           component: About },
-    { path: '/blog',            beforeEnter() {location.href = 'http://localhost:2368'}},
+    { path: '/blog',            beforeEnter() { location.href = 'http://blog.carossa-oper.de/' }},
     { path: '/:catchAll(.*)*',  component: PageNotFound },
-] 
+]
 
 const router = createRouter ({
-    history: createWebHistory(),
+	history: createWebHistory(),
     base: "/",
     routes,
 })
@@ -23,4 +23,4 @@ const app = createApp({});
  
 console.log(process.env.VUE_APP_BLOG_URL);
 app.use(router);
-app.mount("#app"); 
+app.mount("#app");

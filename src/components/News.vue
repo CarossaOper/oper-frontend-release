@@ -18,7 +18,7 @@ class Post {
 }
 
 const api = new GhostContentAPI({
-  url: 'http://localhost:2368',
+  url: 'http://blog.carossa-oper.de',
   key: '6ee0111f27186d49b8f7484183',
   version: "v5.0"
 });

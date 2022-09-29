@@ -15,7 +15,7 @@
                     Schüler, Lehrer oder Eltern - ermöglicht wird. Mit dieser Unterstützung im Rücken (und ehrlich gesagt
                     auch ein bisschen jugendlichem Leichtsinn) stellen wir uns dieser Mammutaufgabe.
                     Es handelt sich hierbei nicht nur um ein außergewöhnliches Projekt, sondern auch um eine
-                    Herzensangelegenheit. Wir, die Q11des HCGs, waren schon ab Tag 1 von dieser Idee restlos
+                    Herzensangelegenheit. Wir, die Q11 des HCGs, waren schon ab Tag 1 von dieser Idee restlos
                     begeistert - Hoffentlich sind Sie es nun auch!
                 </p>
             </div>

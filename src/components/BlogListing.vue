@@ -4,7 +4,7 @@
         <h1>{{title}}</h1>
         <h6>von {{authors}}</h6> 
         <article v-html="short_content"></article>
-        <a :href="'http://localhost:2368/' + slug">mehr lesen...</a>
+        <a :href="'http://blog.carossa-oper.de/' + slug">mehr lesen...</a>
     </div>
 </div>
 </template>
