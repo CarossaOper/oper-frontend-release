@@ -1,8 +1,8 @@
 <template>
     <header class="flex md:block fixed w-full mt-0 mb-0 bg-white justify-between items-center px-4 md:px-12 transition-all duration-200">
-        <div class="w-full py-8">
+        <div class="w-fit py-8">
             <a>
-                <img src="../static/logo_bw_opera.png" alt="CarossaOper Logo" class="h-12 md:h-">
+                <img src="../static/logo_bw_opera.png" alt="CarossaOper Logo" class="h-12 md:h-" :style="{ height: logo_height + 'px'  }">
             </a>
         </div>
         <div>
@@ -37,7 +37,9 @@
                   text-sm
                   xl:text-lg
                   "
-                  :class="{'translate-x-full': collapsed, 'translate-x-0': !collapsed}">
+                  :class="{'translate-x-full': collapsed, 'translate-x-0': !collapsed}" 
+                  :style="{ fontSize: font_size + 'px'  }"
+                  >
                     <li class="py-4 md:mx-auto"><a href="#termine">Termine &amp; Karten</a></li>
                     <li class="py-4 md:mx-auto"><a>Neuigkeiten</a></li>
                     <li class="py-4 md:mx-auto"><a>Über Uns</a></li>
@@ -67,18 +69,48 @@
 
 <script>
 export default {
-    name: 'Navbar',
-    data() {
-        return {
-            collapsed: true,
-        }
-    },
-    methods: {
-        extend() {
-            this.collapsed = !this.collapsed
-        },
+  name: 'Navbar',
+  data() {
+    return {
+      collapsed: true,
+      font_size: 18,
+      logo_height: 48,
     }
-}    
+  },
+  mounted() {
+    window.addEventListener("scroll", this.scroll)
+  },
+  unmounted() {
+    windows.removeEventListener("scroll", this.scroll)
+  },
+  methods: {
+    extend() {
+      this.collapsed = !this.collapsed
+    },
+    scroll() {
+      if (window.innerWidth > 1280) {
+        let font_bs = {y: 100, s: 18}
+        let font_be = {y: 200, s: 15}
+        let logo_bs = {y: 100, s: 48}
+        let logo_be = {y: 400, s: 32}
+        // linear function y = mx + t with scrollY as the x value and the font size as y
+        this.font_size = this.lin(font_bs, font_be)
+        this.logo_height = this.lin(logo_bs, logo_be)
+        console.log('y: ' + window.scrollY + ' | size: ' + this.font_size)
+      }
+    },
+    lin(bs, be) {
+      let offset = be.s - (be.s-bs.s)/(be.y-bs.y)*be.y 
+      let val = (be.s-bs.s)/(be.y-bs.y)*window.scrollY + offset
+      // only define the function for [be.s; bs.s]
+      if (val < be.s) val = be.s
+      else if (val > bs.s) val = bs.s
+      
+      return val
+    }
+  }
+}
+
 </script>
 <style scoped>
 #nav-icon3 {

@@ -4,15 +4,14 @@
     <Navbar class="mt-4 mb-6"/>
     <div class="height-full">   
         <div class="hero-bg w-full"><span></span></div>
-        <Bookings />
-      </div>
+    </div>
+    <div class="container mx-auto">
+      <Bookings />
+    </div>
   </div>
 </template>
 
 <script>
-import simplebar from 'simplebar-vue';
-import 'simplebar/dist/simplebar.min.css';
-
 export default {
   name: 'Landing'
 }

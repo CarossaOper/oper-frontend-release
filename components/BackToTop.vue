@@ -22,7 +22,6 @@ export default {
     },
     methods:  {
         scroll() {
-            console.log(this.hidden + ' | y: ' + window.scrollY)
             if (window.scrollY > 300) {
                 this.hidden = false;
             } else {
