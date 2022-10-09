@@ -1,11 +1,12 @@
 FROM node:18.10.0
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
-COPY . /usr/src/app/
+COPY . /app/
 RUN npm install
 
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build
 EXPOSE 81
 
