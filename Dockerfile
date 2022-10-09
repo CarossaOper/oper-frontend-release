@@ -1,9 +1,10 @@
 FROM node:lts-gallium
 
 RUN mkdir -p /app
+
+COPY . /app
 WORKDIR /app
 
-COPY . /app/
 RUN npm install
 
 ENV NODE_OPTIONS=--openssl-legacy-provider
