@@ -1,4 +1,4 @@
-FROM node:18.10.0
+FROM node:lts-gallium
 
 RUN mkdir -p /app
 WORKDIR /app
