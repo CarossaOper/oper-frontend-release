@@ -1,25 +1,30 @@
 <template>
   <div class="w-full">
     <BackToTop />
-    <nuxt-img class="mt-5 ml-5 max-h-20" src="/logo_bw_opera.png" alt="Die Carossa Oper Logo"/>
-    <div class="container mx-auto">
-      <Navbar class="mt-4 mb-6"/>
-      <div class="hero-bg"><span></span></div>
-      <Bookings />
-    </div>
+    <Navbar class="mt-4 mb-6"/>
+    <div class="height-full">   
+        <div class="hero-bg w-full"><span></span></div>
+        <Bookings />
+      </div>
   </div>
 </template>
 
 <script>
+import simplebar from 'simplebar-vue';
+import 'simplebar/dist/simplebar.min.css';
+
 export default {
   name: 'Landing'
 }
 </script>
 
 <style scoped>
+.height-full {
+  height: 100vh;
+}
 .hero-bg {
   background-image: url("@/static/hero-bg.jpeg");
-  height: 80vh;
+  height: 100vh;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
