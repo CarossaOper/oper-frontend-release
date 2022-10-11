@@ -43,11 +43,11 @@
                   :class="{'translate-x-full': collapsed, 'translate-x-0': !collapsed}" 
                   :style="{ fontSize: font_size + 'px'  }"
                   >
-                    <li class="py-4 md:mx-auto"><a href="#termine">Termine &amp; Karten</a></li>
-                    <li class="py-4 md:mx-auto"><a href="https://blog.carossa-oper.de/">Neuigkeiten</a></li>
-                    <li class="py-4 md:mx-auto"><NuxtLink to="/about">Über Uns</NuxtLink></li>
-                    <li class="py-4 md:mx-auto"><a>Unsere Unterstützer</a></li>
-                    <li class="py-4 md:mx-auto"><a href="https://www.carossa-gymnasium.de/">Die Schule</a></li>
+                    <li class="py-4 md:mx-auto" :class="{'px-5': row}" v-on:click="extend"><a href="#termine">Termine &amp; Karten</a></li>
+                    <li class="py-4 md:mx-auto" :class="{'px-5': row}"><a href="https://blog.carossa-oper.de/">Neuigkeiten</a></li>
+                    <li class="py-4 md:mx-auto" :class="{'px-5': row}"><NuxtLink to="/about">Über Uns</NuxtLink></li>
+                    <li class="py-4 md:mx-auto" :class="{'px-5': row}" v-on:click="extend"><a>Unsere Unterstützer</a></li>
+                    <li class="py-4 md:mx-auto" :class="{'px-5': row}"><a href="https://www.carossa-gymnasium.de/">Die Schule</a></li>
                 </ul>
             </nav>
         </div>
