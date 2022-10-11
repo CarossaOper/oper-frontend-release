@@ -1,4 +1,4 @@
-FROM node:lts-gallium
+FROM node:17
 
 RUN mkdir -p /app
 
@@ -14,4 +14,4 @@ EXPOSE 81
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=81
 
-ENTRYPOINT [ "npm", "run", "start" ]
+ENTRYPOINT [ "npm", "start" ]
