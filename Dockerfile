@@ -14,4 +14,4 @@ EXPOSE 81
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=81
 
-CMD [ "npm", "start" ]
+RUN [ "npm", "start" ]
