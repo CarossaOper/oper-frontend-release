@@ -1,5 +1,8 @@
 <template>
-    <header class="flex md:block fixed w-full mt-0 mb-0 bg-white justify-between items-center px-4 md:px-12 transition-all duration-200">
+    <header
+      class="flex fixed w-full mt-0 mb-0 bg-white justify-between px-4 md:px-12 transition-all duration-200"
+      :class="{'flex-row': row, 'flex-col': !row, 'items-center': row}"
+    >
         <div class="w-fit py-8">
             <NuxtLink to="/">
                 <img src="../static/logo_bw_opera.png" alt="CarossaOper Logo" class="h-12 md:h-" :style="{ height: logo_height + 'px'  }">
@@ -75,7 +78,13 @@ export default {
       collapsed: true,
       font_size: 18,
       logo_height: 48,
+      y_latch_row: 200,
+      row: false,
     }
+  },
+  beforeMount() {
+    if(window.innerWidth > 1280) this.row = false
+    else this.row = true
   },
   mounted() {
     window.addEventListener("scroll", this.scroll)
@@ -89,13 +98,17 @@ export default {
     },
     scroll() {
       if (window.innerWidth > 1280) {
-        let font_bs = {y: 100, s: 18}
+        let font_bs = {y: 50, s: 18}
         let font_be = {y: 200, s: 15}
-        let logo_bs = {y: 100, s: 48}
-        let logo_be = {y: 400, s: 32}
+        let logo_bs = {y: 50, s: 48}
+        let logo_be = {y: 200, s: 32}
         // linear function y = mx + t with scrollY as the x value and the font size as y
         this.font_size = this.lin(font_bs, font_be)
         this.logo_height = this.lin(logo_bs, logo_be)
+
+        if(window.scrollY > this.y_latch_row) this.row = true
+        else if (window.scrollY < this.y_latch_row) this.row = false
+
         console.log('y: ' + window.scrollY + ' | size: ' + this.font_size)
       }
     },
