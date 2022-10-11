@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'oper-frontend-nuxt',
+    title: 'Carossa Oper',
     htmlAttrs: {
       lang: 'de'
     },

@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN npm install
 
-# ENV NODE_OPTIONS=--openssl-legacy-provider
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build
 EXPOSE 81
 

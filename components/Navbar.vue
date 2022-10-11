@@ -1,9 +1,9 @@
 <template>
     <header class="flex md:block fixed w-full mt-0 mb-0 bg-white justify-between items-center px-4 md:px-12 transition-all duration-200">
         <div class="w-fit py-8">
-            <a>
+            <NuxtLink to="/">
                 <img src="../static/logo_bw_opera.png" alt="CarossaOper Logo" class="h-12 md:h-" :style="{ height: logo_height + 'px'  }">
-            </a>
+            </NuxtLink>
         </div>
         <div>
             <nav class="relative">
@@ -41,10 +41,10 @@
                   :style="{ fontSize: font_size + 'px'  }"
                   >
                     <li class="py-4 md:mx-auto"><a href="#termine">Termine &amp; Karten</a></li>
-                    <li class="py-4 md:mx-auto"><a>Neuigkeiten</a></li>
-                    <li class="py-4 md:mx-auto"><a>Über Uns</a></li>
+                    <li class="py-4 md:mx-auto"><a href="https://blog.carossa-oper.de/">Neuigkeiten</a></li>
+                    <li class="py-4 md:mx-auto"><NuxtLink to="/about">Über Uns</NuxtLink></li>
                     <li class="py-4 md:mx-auto"><a>Unsere Unterstützer</a></li>
-                    <li class="py-4 md:mx-auto"><a>Die Schule</a></li>
+                    <li class="py-4 md:mx-auto"><a href="https://www.carossa-gymnasium.de/">Die Schule</a></li>
                 </ul>
             </nav>
         </div>
