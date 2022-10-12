@@ -8,6 +8,9 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
+    screens: {
+      'mnav': '940px'
+    },
     extend: {
       fontFamily: {
         vollkornsc: "Vollkorn SC, serif",
