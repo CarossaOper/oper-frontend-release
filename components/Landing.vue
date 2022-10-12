@@ -8,6 +8,7 @@
     <div class="container mx-auto">
       <Bookings />
     </div>
+    <Footer />
   </div>
 </template>
 
