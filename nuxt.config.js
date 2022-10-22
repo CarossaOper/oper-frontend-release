@@ -8,7 +8,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Carossa Oper des P-Seminars "Amateur meets Profi" 2022/23' },
+      { hid: 'description', name: 'description', content: 'Die Carossa Oper "Die Göttin wird modern" ist ein Schulprojekt des P-Seminars "Amateur meets Profi" 2022/23, welches sich Textgestaltung, Komposition und Organisation einer eigenen Oper zum Ziel gesetzt hat.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

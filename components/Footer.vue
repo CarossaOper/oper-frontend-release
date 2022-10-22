@@ -1,15 +1,16 @@
 <template>
     <div class="w-full bg-black py-8 text-white font-noto">
         <div class="flex flex-row justify-around container mx-auto mt-3">
-            <ul class="text-xs flex flex-col items-center">
+            <ul class="text-sm flex flex-col items-center">
                 <li><a href="#">Nutzungsbedingungen</a></li>
                 <li><a href="#">Datenschutz</a></li>
                 <li><a href="#">Impressum</a></li>
             </ul>
+            <!--//TODO: Weißes Logo erstellen-->
             <NuxtLink to="/">
                 <img src="../static/logo_wb_opera.png" alt="CarossaOper Logo" class="w-28">
             </NuxtLink>
-            <ul class="text-xs flex flex-col items-center">
+            <ul class="text-sm flex flex-col items-center">
                 <li><a href="#">Termine &amp; Karten</a></li>
                 <li><a href="#">Neuigkeiten</a></li>
                 <li><a href="#">Über Uns</a></li>

@@ -8,6 +8,7 @@
     <div class="container mx-auto">
       <Bookings />
     </div>
+    <Carousel/>
     <Footer />
   </div>
 </template>

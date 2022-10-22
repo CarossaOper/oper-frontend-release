@@ -19,6 +19,7 @@
     "simplebar-vue": "^1.6.10",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
+    "vue-slick-carousel": "^1.0.6",
     "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {

@@ -18,7 +18,7 @@ export default {
         window.addEventListener("scroll", this.scroll)
     },
     unmounted() {
-        windows.removeEventListener("scroll", this.scroll)
+        window.removeEventListener("scroll", this.scroll)
     },
     methods:  {
         scroll() {
@@ -42,10 +42,11 @@ export default {
     height: 40px;
     right: 1vw;
     bottom: 2vh;
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
+    background-color: #000000;
     cursor: pointer;
     z-index: 99;
-    color: #000000;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
