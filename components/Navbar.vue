@@ -1,71 +1,59 @@
 <template>
-    <header
-      class="flex fixed w-full mt-0 mb-0 bg-white justify-between px-4 md:px-12 transition-all duration-200"
-      :class="{'flex-row': row, 'flex-col': !row, 'items-center': row}"
-    >
-        <div class="w-fit py-8">
-            <NuxtLink to="/">
-                <img src="../static/logo_bw_opera.png" alt="CarossaOper Logo" class="h-12 md:h-" :style="{ height: logo_height + 'px'  }">
-            </NuxtLink>
+  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit">
+    <div class="mx-auto flex flex-wrap p-5 bg-white items-center flex-col md:flex-row justify-between">
+      <div class="block">
+        <NuxtLink class="title-font font-medium items-center text-gray-900 mb-4 md:mb-0" to="/">
+          <img src="../static/logo_bw_opera.png" alt="CarossaOper Logo"
+            :class="{ 'h-14': !this.scrolled, 'h-14 lg:h-12': this.scrolled }" class="nav-transition">
+        </NuxtLink>
+      </div>
+      <button class=" right-5 collapsed ml-auto lg:hidden block" type="button" v-on:click="extend">
+        <div :class="{'hamburger-open': !this.collapsed}" class="hamburger-div">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div>
-            <nav class="relative">
-                <button class=" right-5 nav-toggle collapsed mx-auto md:hidden block" type="button" v-on:click="extend">
-                  <div :class="{open: !this.collapsed}" id="nav-icon3">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                    <!----<svg :class="{hidden: !this.collapsed}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                    <svg :class="{hidden: this.collapsed}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>-->
-                </button>
-                <ul 
-                class="fixed justify-center font-vollkornsc
-                  left-0
-                  right-0
-                  min-h-screen
-                  px-4
-                  space-y-4
-                  bg-white
-                  text-black
-                  transform
-                  transition
-                  duration-300
-                  md:relative md:flex md:min-h-0 md:px-0 md:mt-0 md:space-y-0 md:translate-x-0 
-                  text-sm
-                  xl:text-lg
-                  "
-                  :class="{'translate-x-full': collapsed, 'translate-x-0': !collapsed}" 
-                  :style="{ fontSize: font_size + 'px'  }"
-                  >
-                    <li class="py-4 md:mx-auto" :class="{'px-5': row}" v-on:click="extend"><NuxtLink to="/#termine">Termine &amp; Karten</NuxtLink></li>
-                    <li class="py-4 md:mx-auto" :class="{'px-5': row}"><a href="https://blog.carossa-oper.de/">Neuigkeiten</a></li>
-                    <li class="py-4 md:mx-auto" :class="{'px-5': row}"><NuxtLink to="/about">Über Uns</NuxtLink></li>
-                    <li class="py-4 md:mx-auto" :class="{'px-5': row}" v-on:click="extend"><a>Unsere Unterstützer</a></li>
-                    <li class="py-4 md:mx-auto" :class="{'px-5': row}"><a href="https://www.carossa-gymnasium.de/">Die Schule</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!----<div>
-        <nav class="w-full">
-            <button class="nav-toggle collapsed mx-auto xl:hidden block" type="button" v-on:click="extend">
-                <svg :class="{hidden: !this.collapsed}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <svg :class="{hidden: this.collapsed}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mb-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            
-        </nav>
-    </div>-->
+      </button>  
+      <ul :class="{'w-full lg:w-fit lg:translate-x-0 lg:mt-0': this.scrolled, 'lg:mt-32 lg:w-[80%] lg:-translate-x-[12%]': !this.scrolled,
+          'translate-x-full': collapsed, 'translate-x-0': !collapsed}" 
+          class="lg:flex w-full nav-transition nav-transition mt-8 hidden">
+        <li :class="{ 'lg:mx-5': this.scrolled }" class="mx-auto my-8">
+          <NuxtLink class="text-2xl lg:text-base" to="/#termine">Termine &amp; Karten</NuxtLink>
+        </li>
+        <li :class="{ 'lg:mx-5': this.scrolled }" class="mx-auto my-8">
+          <a class="text-2xl lg:text-base" href="https://blog.carossa-oper.de/">Neuigkeiten</a>
+        </li>
+        <li :class="{ 'lg:mx-5': this.scrolled }" class="mx-auto my-8">
+          <NuxtLink class="text-2xl lg:text-base" to="/about">Über Uns</NuxtLink>
+        </li>
+        <li :class="{ 'lg:mx-5': this.scrolled }" class="mx-auto my-8">
+          <a class="text-2xl lg:text-base">Unsere Unterstützer</a>
+        </li>
+        <li :class="{ 'lg:mx-5': this.scrolled }" class="mx-auto my-8">
+          <a class="text-2xl lg:text-base" href="https://www.carossa-gymnasium.de/">Die Schule</a>
+        </li>
+      </ul>
+    </div>
+    <ul :class="{'translate-x-full': collapsed, 'translate-x-0': !collapsed}" 
+          class="lg:hidden w-full nav-transition block nav-transition pl-5 pt-8 bg-white h-screen">
+        <li class="mx-auto my-8" v-on:click="extend">
+          <NuxtLink class="text-2xl lg:text-base" to="/#termine">Termine &amp; Karten</NuxtLink>
+        </li>
+        <li class="mx-auto my-8" v-on:click="extend">
+          <a class="text-2xl lg:text-base" href="https://blog.carossa-oper.de/">Neuigkeiten</a>
+        </li>
+        <li class="mx-auto my-8" v-on:click="extend">
+          <NuxtLink class="text-2xl lg:text-base" to="/about">Über Uns</NuxtLink>
+        </li>
+        <li class="mx-auto my-8" v-on:click="extend">
+          <a class="text-2xl lg:text-base">Unsere Unterstützer</a>
+        </li>
+        <li class="mx-auto my-8" v-on:click="extend">
+          <a class="text-2xl lg:text-base" href="https://www.carossa-gymnasium.de/">Die Schule</a>
+        </li>
+      </ul>
+  </header>
 </template>
 
 
@@ -76,6 +64,7 @@ export default {
   data() {
     return {
       collapsed: true,
+      scrolled: false,
       font_size: 18,
       logo_height: 48,
       y_latch_row: 200,
@@ -83,52 +72,39 @@ export default {
     }
   },
   beforeMount() {
-    if(window.innerWidth > 1280) this.row = false
-    else this.row = true
+    window.addEventListener('scroll', this.handleScroll);
   },
-  mounted() {
-    window.addEventListener("scroll", this.scroll)
-  },
-  unmounted() {
-    windows.removeEventListener("scroll", this.scroll)
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    extend() {
-      this.collapsed = !this.collapsed
-    },
-    scroll() {
-      if (window.innerWidth > 1280) {
-        let font_bs = {y: 50, s: 18}
-        let font_be = {y: 200, s: 15}
-        let logo_bs = {y: 50, s: 48}
-        let logo_be = {y: 200, s: 32}
-        // linear function y = mx + t with scrollY as the x value and the font size as y
-        this.font_size = this.lin(font_bs, font_be)
-        this.logo_height = this.lin(logo_bs, logo_be)
-
-        if(window.scrollY > this.y_latch_row) this.row = true
-        else if (window.scrollY < this.y_latch_row) this.row = false
-
-        console.log('y: ' + window.scrollY + ' | size: ' + this.font_size)
+    handleScroll(event) {
+      if (window.scrollY > 80) {
+        this.scrolled = true;
+      } else {
+        this.scrolled = false;
       }
     },
-    lin(bs, be) {
-      let offset = be.s - (be.s-bs.s)/(be.y-bs.y)*be.y 
-      let val = (be.s-bs.s)/(be.y-bs.y)*window.scrollY + offset
-      // only define the function for [be.s; bs.s]
-      if (val < be.s) val = be.s
-      else if (val > bs.s) val = bs.s
-      
-      return val
+    extend() {
+      this.collapsed = !this.collapsed;
     }
   }
 }
-
 </script>
+
 <style scoped>
-#nav-icon3 {
-  width: 25px;
-  height: 20px;
+.nav-transition {
+  transition: all 400ms ease;
+}
+
+.m-nav {
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+.hamburger-div {
+  width: 2rem;
+  height: 2.5rem;
   position: relative;
   margin: 50px auto;
   -webkit-transform: rotate(0deg);
@@ -141,13 +117,14 @@ export default {
   transition: .5s ease-in-out;
   cursor: pointer;
 }
-#nav-icon3 span{
+
+.hamburger-div span {
   display: block;
   position: absolute;
-  height: 3px;
+  height: 0.2rem;
   width: 100%;
-  background: rgb(0, 0, 0);
-  border-radius: 3px;
+  background: black;
+  border-radius: 0.5rem;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -160,39 +137,39 @@ export default {
   transition: .25s ease-in-out;
 }
 
-#nav-icon3 span:nth-child(1) {
+.hamburger-div span:nth-child(1) {
   top: 0px;
 }
 
-#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
-  top: 8px;
+.hamburger-div span:nth-child(2), .hamburger-div span:nth-child(3) {
+  top: 0.7rem;
 }
 
-#nav-icon3 span:nth-child(4) {
-  top: 16px;
+.hamburger-div span:nth-child(4) {
+  top: 1.4rem;
 }
 
-#nav-icon3.open span:nth-child(1) {
+.hamburger-open span:nth-child(1) {
   top: 18px;
   width: 0%;
   left: 50%;
 }
 
-#nav-icon3.open span:nth-child(2) {
+.hamburger-open span:nth-child(2) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-#nav-icon3.open span:nth-child(3) {
+.hamburger-open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-#nav-icon3.open span:nth-child(4) {
+.hamburger-open span:nth-child(4) {
   top: 18px;
   width: 0%;
   left: 50%;
