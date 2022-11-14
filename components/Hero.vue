@@ -18,4 +18,10 @@ export default defineComponent({
 
 <style scoped>
 
+.bg-hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
 </style>
