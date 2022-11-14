@@ -2,7 +2,7 @@
   <div>
     <NuxtLayout name="funzt sonst nicht">
       <Hero />
-      <Bookings />
+      <Bookings :sale="false"/>
       <Sponsors />
     </NuxtLayout>
   </div>
