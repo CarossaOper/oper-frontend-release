@@ -1,13 +1,13 @@
 <template>
-  <div class="h-[50vh] block w-11/12 mx-auto" id="sponsors">
+  <div class="min-h-[50vh] înline-block w-11/12 mx-auto" id="sponsors">
     <div class="py-[17%] lg:py-[8%] block">
       <h1 class="font-vollkornsc text-center text-4xl mb-16 text-gray-700 font-bold underline">Unsere Unterstützer</h1>
       <Swiper style='--swiper-navigation-color: black' 
-      class="-z-10" 
+      class="" 
         :centeredSlides="true" :navigation="true"
         :modules="modules" :slides-per-view="1" :breakpoints="{1100: {slidesPerView: 3}}"
         :space-between="0" @swiper="onSwiper" @slideChange="onSlideChange" :loop="true"
-        :grabCursor="true" 
+        :grabCursor="true"
         >
 
         <swiper-slide class="">

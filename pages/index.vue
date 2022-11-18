@@ -1,7 +1,9 @@
 <template>
   <div>
-    <NuxtLayout name="funzt sonst nicht">
-      <Hero />
+    <NuxtLayout name="site">
+      <NuxtLayout name="hero">
+        <MainTitle title="Die Göttin wird modern" />
+      </NuxtLayout>
       <Bookings />
       <Sponsors />
     </NuxtLayout>

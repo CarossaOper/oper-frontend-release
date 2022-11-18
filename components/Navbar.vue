@@ -1,57 +1,27 @@
 <template>
-  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit">
-    <div class="mx-auto flex flex-wrap p-3 bg-white items-center flex-row justify-between">
-      <NuxtLink class="title-font inline-block h-full font-medium items-center my- text-gray-900" to="/">
-          <img src="~~/assets/img/logo_bw_opera.png" alt="CarossaOper Logo"
-            :class="{ 'h-14': !scrolled, 'h-14 lg:h-12': scrolled }" class="nav-transition" />
-      </NuxtLink>
-      <button class="right-5 collapsed lg:hidden inline-block" type="button" v-on:click="extend()">
-        <div :class="{'hamburger-open': !collapsed}" class="hamburger-div">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>  
-      <ul :class="{'w-full lg:w-fit lg:translate-x-0 lg:mt-0': scrolled, 'lg:mt-32 lg:w-[80%] lg:-translate-x-[12%]': !scrolled}"
-          class="lg:flex nav-transition hidden">
-        <li :class="{ 'mx-5': scrolled }" class="mx-auto nav-transition">
-          <NuxtLink class="navlink text-2xl lg:text-base" :to="{path: '/', hash: '#termine'}">Termine &amp; Karten</NuxtLink>
-        </li>
-        <li :class="{ 'mx-5': scrolled }" class="mx-auto nav-transition">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="https://blog.carossa-oper.de/">Neuigkeiten</NuxtLink>
-        </li>
-        <li :class="{ 'mx-5': scrolled }" class="mx-auto nav-transition">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="/about">Über Uns</NuxtLink>
-        </li>
-        <li :class="{ 'mx-5': scrolled }" class="mx-auto nav-transition">
-          <NuxtLink class="navlink text-2xl lg:text-base" :to="{path: '/', hash: '#sponsors'}">Unsere Unterstützer</NuxtLink>
-        </li>
-        <li :class="{ 'mx-5': scrolled }" class="mx-auto nav-transition">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="https://www.carossa-gymnasium.de/">Die Schule</NuxtLink>
-        </li>
-      </ul>
-    </div>
-    <ul :class="{'translate-x-full': collapsed, 'translate-x-0': !collapsed}" 
-          class="lg:hidden w-full nav-transition block pl-5 pt-8 bg-white h-screen">
-        <li class="mx-auto my-8" v-on:click="extend">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="#termine">Termine &amp; Karten</NuxtLink>
-        </li>
-        <li class="mx-auto my-8" v-on:click="extend">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="https://blog.carossa-oper.de/">Neuigkeiten</NuxtLink>
-        </li>
-        <li class="mx-auto my-8" v-on:click="extend">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="/about">Über Uns</NuxtLink>
-        </li>
-        <li class="mx-auto my-8" v-on:click="extend">
-          <NuxtLink class="navlink text-2xl lg:text-base" :to="{path: '/', hash: '#sponsors'}">Unsere Unterstützer</NuxtLink>
-        </li>
-        <li class="mx-auto my-8" v-on:click="extend">
-          <NuxtLink class="navlink text-2xl lg:text-base" to="https://www.carossa-gymnasium.de/">Die Schule</NuxtLink>
-        </li>
-      </ul>
+  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit z-10 nav-transition">
+    <nav class="bg-white h-20 flex mx-auto justify-between">
+      <NavHomeLink class="mt-4<" />
+      <MobileNavToggleButton />
+      <NavBarDesktop class="w-[70vw] flex align-center mt-16 ">
+        <NavLinkDesktop :scrolled="scrolled" label="Termine &amp; Karten" to="#termine" />
+        <NavLinkDesktop :scrolled="scrolled" label="Neuigkeiten" to="https://blog.carossa-oper.de/" />
+        <NavLinkDesktop :scrolled="scrolled" label="Über Uns" to="/about" />
+        <NavLinkDesktop :scrolled="scrolled" label="Unsere Unterstützer" to="#sponsors" />
+        <NavLinkDesktop :scrolled="scrolled" label="Die Schule" to="https://www.carossa-gymnasium.de/" />
+      </NavBarDesktop>
+      <NavBarMobile :class="{ 'translate-x-full': collapsed, 'translate-x-0': !collapsed }">
+        <NavLinkMobile label="Termine &amp; Karten" to="#termine" />
+        <NavLinkMobile label="Neuigkeiten" to="https://blog.carossa-oper.de/" />
+        <NavLinkMobile label="Über Uns" to="/about" />
+        <NavLinkMobile label="Unsere Unterstützer" to="#sponsors" />
+        <NavLinkMobile label="Die Schule" to="https://www.carossa-gymnasium.de/" />
+      </NavBarMobile>
+      <div class="w-28 h-14 inline-block align-center"></div>
+    </nav>
   </header>
 </template>
+
 
 
 
@@ -90,9 +60,16 @@ export default {
 </script>
 
 <style scoped>
-
 .nav-transition {
   transition: all 400ms ease;
+}
+
+.translate-nav-middle {
+  transform: translateX(calc(100vh / 2 - 100% / 2))
+}
+
+.translate-nav-right {
+  transform: translateX(calc(100vw / 2 - (60vw / 2) - 4rem));
 }
 
 .m-nav {
@@ -139,7 +116,8 @@ export default {
   top: 0px;
 }
 
-.hamburger-div span:nth-child(2), .hamburger-div span:nth-child(3) {
+.hamburger-div span:nth-child(2),
+.hamburger-div span:nth-child(3) {
   top: 0.7rem;
 }
 
@@ -171,19 +149,5 @@ export default {
   top: 18px;
   width: 0%;
   left: 50%;
-}
-
-.navlink::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0.1rem;
-    background: black;
-    transition: width .2s;
-}
-
-.navlink:hover::after {
-  width: 100%;
-  transition: ease .2s;
 }
 </style>
