@@ -1,5 +1,5 @@
 <template>
-  <div class="my-auto w-fit h-fit inline-block align-middle relative mx-auto transition-all duration-200">
+  <div class="my-auto w-fit h-fit inline-block align-middle relative mx-auto transition-all duration-200 px-4">
     <NuxtLink class="h-fit w-fit navlink text-2xl lg:text-base" :to="to">{{ label }}</NuxtLink>
   </div>
 </template>
