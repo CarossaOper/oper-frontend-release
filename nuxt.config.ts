@@ -11,10 +11,9 @@ export default defineNuxtConfig({
         ],
         link: [
           { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-          { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
-          { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous'},
-          { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Vollkorn+SC&display=swap'},
-          { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap'}
+          { rel: 'preconnect', href: 'api.fonts.coollabs.io'},
+          { rel: 'stylesheet', type: 'text/css', href: 'https://api.fonts.coollabs.io/css2?family=Vollkorn+SC&display=swap'},
+          { rel: 'stylesheet', type: 'text/css', href: 'https://api.fonts.coollabs.io/css2?family=Noto+Serif:wght@400;700&display=swap'}
         ]
       }
     },
