@@ -9,7 +9,7 @@
         </ul>
         <!--//TODO: Weißes Logo erstellen-->
         <NuxtLink to="/">
-          <img src="~~/assets/img/logo_wb_opera.png" alt="CarossaOper Logo" class="w-28">
+          <img src="~~/assets/img/logo_bw.png" alt="CarossaOper Logo" class="w-20">
         </NuxtLink>
         <ul class="text-sm flex flex-col items-center">
           <li class="my-1"><a href="#">Termine &amp; Karten</a></li>
