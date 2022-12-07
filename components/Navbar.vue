@@ -1,5 +1,5 @@
 <template>
-  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit z-10 nav-transition">
+  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit z-10 nav-transition" :class="{ 'z-30': !collapsed }">
     <nav class="block h-fit mx-auto justify-between">
       <NavHomeLink class="hidden lg:flex" />
       <div class="desktop-nav hidden lg:flex bg-white lg:-mt-24">
@@ -23,10 +23,10 @@
         </button>
       </div>
       <NavBarMobile :class="{ 'translate-x-full': collapsed, 'translate-x-0': !collapsed }">
-        <NavLinkMobile label="Termine &amp; Karten" to="/#termine" />
-        <NavLinkMobile label="Neuigkeiten" to="https://blog.carossa-oper.de/" />
-        <NavLinkMobile label="Über Uns" to="/about" />
-        <NavLinkMobile label="Unsere Unterstützer" to="/#sponsors" />
+        <NavLinkMobile label="Termine &amp; Karten" to="/#termine" v-on:click="extend()"/>
+        <NavLinkMobile label="Neuigkeiten" to="https://blog.carossa-oper.de/"/>
+        <NavLinkMobile label="Über Uns" to="/about"/>
+        <NavLinkMobile label="Unsere Unterstützer" to="/#sponsors" v-on:click="extend()"/>
         <NavLinkMobile label="Die Schule" to="https://www.carossa-gymnasium.de/" />
       </NavBarMobile>
       <div class="w-28 h-14 inline-block align-center"></div>

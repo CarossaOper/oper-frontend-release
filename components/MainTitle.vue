@@ -1,5 +1,5 @@
 <template>
-  <p class="text-white font-vollkornsc font-black text-8xl px-5 text-shadow word-spacing-break text-center">
+  <p class="text-white font-vollkornsc font-black text-4xl sm:text-6xl xl:text-8xl px-5 text-shadow word-spacing-break text-center">
     {{ title }}
   </p>
 </template>
