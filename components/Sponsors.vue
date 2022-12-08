@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-[50vh] înline-block w-11/12 mx-auto relative z-20" id="sponsors">
+  <div class="min-h-[50vh] w-11/12 mx-auto relative z-20" id="sponsors">
     <div class="py-[17%] lg:py-[8%] block">
-      <h1 class="font-vollkornsc text-center text-4xl mb-16 text-gray-700 font-bold underline">Unsere Unterstützer</h1>
-      <swiper style='--swiper-navigation-color: black' 
+      <h1 class="font-vollkornsc text-center text-3xl mb-16 text-gray-700 font-bold underline">Unsere Unterstützer</h1>
+      <swiper style='--swiper-navigation-color: black'
         class=""
         navigation
         :pagination="{ clickable: true }"

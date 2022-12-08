@@ -3,7 +3,7 @@
     <div class="block py-16">
       <div class="flex flex-col-reverse lg:flex-row justify-around container mx-auto pt-[1%]">
         <ul class="text-sm flex flex-col items-center">
-          <li class="my-1"><a href="#">Nutzungsbedingungen</a></li>
+          <li class="my-1"><a href="/nutzung">Nutzungsbedingungen</a></li>
           <li class="my-1"><a href="#">Datenschutz</a></li>
           <li class="my-1"><a href="/impressum">Impressum</a></li>
         </ul>

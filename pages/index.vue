@@ -4,7 +4,7 @@
         <MainTitle title="Die Göttin wird modern" />
       </NuxtLayout>
       <Bookings :sale="false"/>
-      <News/>
+      <!--<News/>-->
       <Sponsors />
     </NuxtLayout>
 </template>

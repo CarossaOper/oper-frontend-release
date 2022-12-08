@@ -1,5 +1,5 @@
 <template>
-  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit z-10 nav-transition" :class="{ 'z-30': !collapsed }">
+  <header class="font-vollkornsc fixed w-full mt-0 mb-0 h-screen lg:h-fit z-10 nav-transition" :class="{ 'z-40': !collapsed }">
     <nav class="block h-fit mx-auto justify-between">
       <NavHomeLink class="hidden lg:flex" />
       <div class="desktop-nav hidden lg:flex bg-white lg:-mt-24">
