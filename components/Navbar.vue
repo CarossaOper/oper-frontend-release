@@ -4,10 +4,10 @@
       <NavHomeLink class="hidden lg:flex" />
       <div class="desktop-nav hidden lg:flex bg-white lg:-mt-24">
         <NavBarDesktop :scrolled="scrolled">
-          <NavLinkDesktop :scrolled="scrolled" label="Termine &amp; Karten" to="/#termine" />
+          <NavLinkDesktop :scrolled="scrolled" label="Termine &amp; Karten" to="https://carossa-oper.de/#termine" />
           <NavLinkDesktop :scrolled="scrolled" label="Neuigkeiten" to="https://blog.carossa-oper.de/" />
           <!--<NavLinkDesktop :scrolled="scrolled" label="Über Uns" to="/about" />-->
-          <NavLinkDesktop :scrolled="scrolled" label="Unsere Unterstützer" to="/#sponsors" />
+          <NavLinkDesktop :scrolled="scrolled" label="Unsere Unterstützer" to="https://carossa-oper.de/#sponsors" />
           <NavLinkDesktop :scrolled="scrolled" label="Die Schule" to="https://www.carossa-gymnasium.de/" />
         </NavBarDesktop>
       </div>
@@ -23,10 +23,10 @@
         </button>
       </div>
       <NavBarMobile :class="{ 'translate-x-full': collapsed, 'translate-x-0': !collapsed }">
-        <NavLinkMobile label="Termine &amp; Karten" to="/#termine" v-on:click="extend()"/>
+        <NavLinkMobile label="Termine &amp; Karten" to="https://carossa-oper.de/#termine" v-on:click="extend()"/>
         <NavLinkMobile label="Neuigkeiten" to="https://blog.carossa-oper.de/" v-on:click="extend()"/>
         <!--<NavLinkMobile label="Über Uns" to="/about"/>-->
-        <NavLinkMobile label="Unsere Unterstützer" to="/#sponsors" v-on:click="extend()"/>
+        <NavLinkMobile label="Unsere Unterstützer" to="https://carossa-oper.de/#sponsors" v-on:click="extend()"/>
         <NavLinkMobile label="Die Schule" to="https://www.carossa-gymnasium.de/" v-on:click="extend()"/>
       </NavBarMobile>
       <div class="w-28 h-14 inline-block align-center"></div>

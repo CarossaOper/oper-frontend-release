@@ -11,7 +11,7 @@
           <img src="~~/assets/img/logo_bw.png" alt="CarossaOper Logo" class="w-20">
         </NuxtLink>
         <ul class="text-sm flex flex-col items-center">
-          <li class="my-1"><a href="/#termine">Termine &amp; Karten</a></li>
+          <li class="my-1"><a href="https://carossa-oper.de/#termine">Termine &amp; Karten</a></li>
           <li class="my-1"><a href="https://blog.carossa-oper.de/">Neuigkeiten</a></li>
           <!--//TODO: Change this once About us is available-->
           <li class="my-1"><a href="https://blog.carossa-oper.de/">Über Uns</a></li>
