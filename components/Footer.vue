@@ -1,5 +1,5 @@
 <template>
-  <div class="h-fit w-full bg-black text-white font-noto block bottom-0">
+  <div class="h-fit w-full bg-black text-white font-noto block bottom-0 relative z-20">
     <div class="block py-16">
       <div class="flex flex-col-reverse lg:flex-row justify-around container mx-auto pt-[1%]">
         <ul class="text-sm flex flex-col items-center">
