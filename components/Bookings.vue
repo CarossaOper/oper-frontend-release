@@ -10,7 +10,7 @@
           </div>
           <h1 class="font-bold font-vollkornsc w-fit mx-auto">Kartenvorverkauf beginnt in</h1>
           <h1 class="font-noto text-3xl font-bold mx-auto w-fit my-3" id="countdown">{{timestring}}</h1>
-          <p class="font-noto mx-auto w-fit">am 12.12.2022 um 00.00</p>
+          <p class="font-noto mx-auto w-fit">am 12.12.2022 um 18.00</p>
         </div>
       </div>
 
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     countdown() {
-      var target = new Date("Dec 12, 2022 00:00:00").getTime();
+      var target = new Date("Dec 12, 2022 18:00:00").getTime();
       setInterval(() => {
         var seconds = Math.floor((target - Date.now()) / 1000);
         var delta_hours = Math.floor(seconds/(60*60));
