@@ -1,5 +1,5 @@
 <template>
-    <div class="w-11/12 lg:border-x-0 border border-black flex lg:flex-row flex-col lg:justify-between lg:items-center font-noto text-lg mx-auto">
+    <div class="w-11/12 lg:border-x-0 border border-black flex lg:flex-row flex-col lg:justify-between lg:items-center font-noto text-lg mx-auto relative z-40">
         <div class="flex lg:flex-row flex-col px-3 py-2">
             <span class="flex flex-row items-center lg:ml-2 my-2 lg:pr-6 lg:border-r border-black mx-auto">{{day}}<b class="font-semibold mx-2 text-3xl">{{date}}</b>{{month}}</span>
             <span class="flex flex-row items-center mx-auto">
