@@ -3,7 +3,7 @@
       <NuxtLayout name="hero">
         <MainTitle title="Die Göttin wird modern" />
       </NuxtLayout>
-      <Bookings :sale="false"/>
+      <Bookings/>
       <!--<News/>-->
       <Sponsors />
     </NuxtLayout>
